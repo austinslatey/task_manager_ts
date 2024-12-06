@@ -60,7 +60,7 @@ const Board = () => {
     {
       !loginCheck ? (
         <div className='login-notice'>
-          <h1>
+          <h1 className='login-notice-heading'>
             Login to create & view tickets
           </h1>
         </div>  
