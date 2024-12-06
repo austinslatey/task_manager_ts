@@ -13,13 +13,13 @@
 }
 
 /* webkit solution */
-::-webkit-input-placeholder { 
-  text-align:right; 
+::-webkit-input-placeholder {
+  text-align: right;
 }
 
 /* mozilla solution */
-input:-moz-placeholder { 
-  text-align:right; 
+input:-moz-placeholder {
+  text-align: right;
 }
 
 a {
@@ -27,6 +27,7 @@ a {
   color: #000000;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #058ed9;
 }
@@ -58,9 +59,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #058ed9;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -195,15 +198,22 @@ tbody tr:nth-child(odd) {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns fields to the left */
+  align-items: flex-start;
+  /* Aligns fields to the left */
 }
 
-.form > h1, .form > label {
+.form>h1,
+.form>label {
   color: #000;
 }
 
-.form input, .form label, .form textarea, .form select, .form button {
-  width: 50%; /* Makes all form elements take the full width of the form */
+.form input,
+.form label,
+.form textarea,
+.form select,
+.form button {
+  width: 50%;
+  /* Makes all form elements take the full width of the form */
   margin-bottom: 15px;
 }
 
@@ -228,8 +238,23 @@ tbody tr:nth-child(odd) {
 }
 
 .login-notice {
+  color: #fff;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.login-notice-heading {
+  padding: 12px;
+  border-radius: 24px;
+  box-shadow: 8px 6px 20px rgb(0, 0, 0);
+}
+
+.login-notice-heading:hover {
+  color: #000;
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 4px 3px 12px rgba(0, 0, 0, 0.6);
+  background-color: #e0e0e0;
 }
