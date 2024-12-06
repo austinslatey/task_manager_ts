@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS kanban_db;
+DROP DATABASE IF EXISTS task_manager_db;
 
 -- CREATE DATABASE
-CREATE DATABASE kanban_db;
+CREATE DATABASE task_manager_db;
