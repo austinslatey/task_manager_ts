@@ -1,4 +1,5 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
 import ErrorPage from './ErrorPage';
@@ -16,7 +17,7 @@ const Board = () => {
   const [loginCheck, setLoginCheck] = useState(false);
 
   const checkLogin = () => {
-    if(auth.loggedIn()) {
+    if (auth.loggedIn()) {
       setLoginCheck(true);
     }
   };
@@ -31,7 +32,7 @@ const Board = () => {
     }
   };
 
-  const deleteIndvTicket = async (ticketId: number) : Promise<ApiMessage> => {
+  const deleteIndvTicket = async (ticketId: number): Promise<ApiMessage> => {
     try {
       const data = await deleteTicket(ticketId);
       fetchTickets();
@@ -46,7 +47,7 @@ const Board = () => {
   }, []);
 
   useEffect(() => {
-    if(loginCheck) {
+    if (loginCheck) {
       fetchTickets();
     }
   }, [loginCheck]);
@@ -57,23 +58,25 @@ const Board = () => {
 
   return (
     <>
-    {
-      !loginCheck ? (
-        <div className='login-notice'>
-          <h1 className='login-notice-heading'>
-            Login to create & view tickets
-          </h1>
-        </div>  
-      ) : (
+      {
+        !loginCheck ? (
+          <div className='login-notice'>
+            <Link to='/login'>
+              <h1 className='login-notice-heading'>
+                Login to create & view tickets
+              </h1>
+            </Link>
+          </div>
+        ) : (
           <div className='board'>
             <div className='board-display'>
               {boardStates.map((status) => {
                 const filteredTickets = tickets.filter(ticket => ticket.status === status);
                 return (
-                  <Swimlane 
-                    title={status} 
-                    key={status} 
-                    tickets={filteredTickets} 
+                  <Swimlane
+                    title={status}
+                    key={status}
+                    tickets={filteredTickets}
                     deleteTicket={deleteIndvTicket}
                   />
                 );
@@ -81,7 +84,7 @@ const Board = () => {
             </div>
           </div>
         )
-    }
+      }
     </>
   );
 };
