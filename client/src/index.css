@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-  color: #058ed9;
+  color: #4cae4c;
 }
 
 body {
@@ -61,7 +61,7 @@ button {
 }
 
 button:hover {
-  border-color: #058ed9;
+  border-color: #4cae4c;
 }
 
 button:focus,
@@ -108,7 +108,7 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #058ed9;
+  color: #4cae4c;
 }
 
 .nav-item {
