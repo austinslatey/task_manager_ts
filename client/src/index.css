@@ -314,3 +314,7 @@ tbody tr:nth-child(odd) {
 .login-container button:hover {
   background-color: #4cae4c;
 }
+
+.logoutBtn {
+  color: #000;
+}
