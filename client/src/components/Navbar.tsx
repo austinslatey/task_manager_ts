@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import auth from '../utils/auth';
 
 const Navbar = () => {
-  const [ loginCheck, setLoginCheck ] = useState(false);
+  const [loginCheck, setLoginCheck] = useState(false);
 
   const checkLogin = () => {
-    if(auth.loggedIn()) {
+    if (auth.loggedIn()) {
       setLoginCheck(true);
     }
   };
@@ -22,13 +22,14 @@ const Navbar = () => {
         <Link to='/'><h2>Krazy Kanban Board</h2></Link>
       </div>
       <ul>
-        <li className='nav-item'>
-          <button type='button' id='create-ticket-link'>
-            <Link to='/create' >New Ticket</Link>
-          </button>
-        </li>
-    {
-        !loginCheck ? (
+        {loginCheck && (
+          <li className='nav-item'>
+            <button type='button' id='create-ticket-link'>
+              <Link to='/create'>New Ticket</Link>
+            </button>
+          </li>
+        )}
+        {!loginCheck ? (
           <li className='nav-item'>
             <button type='button'>
               <Link to='/login'>Login</Link>
@@ -36,12 +37,9 @@ const Navbar = () => {
           </li>
         ) : (
           <li className='nav-item'>
-            <button type='button' onClick={() => {
-              auth.logout();
-            }}>Logout</button>
+            <button type='button' className='logoutBtn' onClick={auth.logout}>Logout</button>
           </li>
-        )
-      }
+        )}
       </ul>
     </div>
   )
